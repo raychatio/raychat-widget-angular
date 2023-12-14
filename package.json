@@ -7,10 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-lib" : "ng build raychat-widget",
-    "pack-lib": "cd dist/raychat-widget && npm pack"
+    "lib-build": "ng build raychat-widget",
+    "lib-pack": "cd dist/raychat-widget && npm pack",
+    "lib-publish": "cd projects/raychat-widget && npm publish"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^17.0.0",
     "@angular/common": "^17.0.0",

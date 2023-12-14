@@ -1,6 +1,8 @@
 {
-  "name": "raychat-widget",
+  "name": "@mahdivajdi/widget-angular",
   "version": "0.0.4",
+  "description": "Raychat's angular component package for installing widget script.",
+  "private": false,
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"
@@ -8,5 +10,22 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "author": "Mahdi Vajdi <mahdivajdii@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "raychat",
+    "angular",
+    "raychat.io",
+    "چت آنلاین",
+    "رایچت"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raychatio/raychat-widget-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raychatio/raychat-widget-angular/issues"
+  },
+  "homepage": "https://raychat.io"
 }
