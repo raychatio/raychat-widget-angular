@@ -5,7 +5,7 @@ import { RaychatWidgetService } from './raychat-widget.service';
   selector: 'lib-raychat-widget',
   standalone: true,
   imports: [],
-  template: ` <p>raychat-widget works!</p> `,
+  template: ``,
   styles: ``,
 })
 export class RaychatWidgetComponent implements AfterViewInit {
@@ -28,7 +28,6 @@ export class RaychatWidgetComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log('were in the component');
     this.raychatService.install(this.token, this.type);
   }
 

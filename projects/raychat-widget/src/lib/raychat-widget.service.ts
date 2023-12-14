@@ -7,8 +7,6 @@ export class RaychatWidgetService {
   constructor() {}
 
   install(token: string, type: string = 'normal') {
-    console.log('were in the service');
-
     if (!token) {
       console.error('Token for raychat is not provided.');
       return;
@@ -22,8 +20,6 @@ export class RaychatWidgetService {
     (window as any).RAYCHAT_TOKEN = token;
 
     if (type === 'normal') {
-      console.log('were in the normal script');
-
       const script: HTMLScriptElement = document.createElement('script');
       script.src = 'https://widget-react.raychat.io/install/widget.js';
       script.type = 'text/javascript';
