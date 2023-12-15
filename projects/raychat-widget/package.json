@@ -1,6 +1,6 @@
 {
   "name": "@mahdivajdi/widget-angular",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Raychat's angular component package for installing widget script.",
   "private": false,
   "peerDependencies": {

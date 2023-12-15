@@ -54,7 +54,7 @@ export class AppComponent {
 
 <main>
   <!-- other elements -->
-  <lib-raychat-widget token="c030a005-361e-49e5-b02b-19ead862dc7f" type="normal" />
+  <lib-raychat-widget token="6d5b4ba5-xxxx-xxxx-xxxx-48498f3fc2a2" type="normal" />
 </main>
 ```
 

@@ -23,7 +23,7 @@ export class RaychatWidgetComponent implements AfterViewInit {
     }
 
     if (changes['type']) {
-      this.validateType(changes['type'].currentValue);
+      this.type = this.validateType(changes['type'].currentValue);
     }
   }
 
@@ -39,13 +39,15 @@ export class RaychatWidgetComponent implements AfterViewInit {
     return true;
   }
 
-  private validateType(type: string): void {
-    if (!type) return;
-
-    if (type || type !== 'normal') {
+  private validateType(type: string): string {
+    if (!type) return 'normal';
+    if (type !== 'normal') {
       console.warn(
-        `Passed type for raychat type (${type}) is not valid. using type normal instead.`
+        `Passed type for raychat widget (${type}) is not valid. using type normal instead.`
       );
+      return 'normal';
     }
+
+    return type;
   }
 }
