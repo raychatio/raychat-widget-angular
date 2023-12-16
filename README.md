@@ -1,27 +1,82 @@
-# WidgetAngular
+# Raychat widget installer for Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+![raychat][logo]
 
-## Development server
+#### The new online chat experience begins here!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Get closer to your leads and customers with a website chat widget. Adding a chat widget to your website will make your customer service experience even more exceptional.
 
-## Code scaffolding
+- [Install](#install)
+- [Use](#use)
+- [Props](#props)
+- [License](#license)
+- [Author](#author)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Install
 
-## Build
+```bash
+npm i @raychat/widget-angular
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Use
 
-## Running unit tests
+**1. Import in the AppComponent**
+_Wrote to app.component.ts:_
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```js
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterOutlet } from "@angular/router";
+import { RaychatWidgetComponent } from "raychat-widget";
 
-## Running end-to-end tests
+@Component({
+  selector: "app-root",
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, RaychatWidgetComponent],
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.css",
+})
+export class AppComponent {
+  title = "test-angular1";
+}
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<br>
 
-## Further help
+**2. Use in the app.component.html**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> Get `token` and `type` from [raychat.io][raychat-landing]
+
+```html
+<style>
+  <!-- style related -->
+</style>
+
+<main>
+  <!-- other elements -->
+  <lib-raychat-widget token="6d5b4ba5-xxxx-xxxx-xxxx-48498f3fc2a2" type="normal" />
+</main>
+```
+
+## Props
+
+| props | required | defaultValue | description                                           |
+| ----- | -------- | ------------ | ----------------------------------------------------- |
+| token | true     | undefined    | Get `token` from [raychat.io][raychat-get-token]      |
+| type  | false    | normal       | The type of script: [normal, fast-laod, seo-friendly] |
+
+### License
+
+MIT
+
+### Author
+
+Mahdi Vajdi<br>
+Github: [@mahdi-vajdi][author-github]<br>
+Email: [mahdivajdii@gmail.com][author-email]<br>
+
+[logo]: https://raychat.io/_next/static/media/raychat-logo-english.486d7b96.svg
+[raychat-landing]: https://raychat.io/signup
+[raychat-get-token]: https://raychat.io/dashboard/widget-installation
+[author-github]: https://github.com/mahdi-vajdi
+[author-email]: mailto:mahdivajdii@gmail.com
