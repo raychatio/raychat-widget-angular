@@ -2,13 +2,13 @@ import { AfterViewInit, Component, Input, SimpleChanges } from '@angular/core';
 import { RaychatWidgetService } from './raychat-widget.service';
 
 @Component({
-  selector: 'lib-raychat-widget',
+  selector: 'raychat-widget',
   standalone: true,
   imports: [],
   template: ``,
   styles: ``,
 })
-export class RaychatWidgetComponent implements AfterViewInit {
+export class RaychatWidget implements AfterViewInit {
   @Input() token: string;
   @Input() type: string = 'NORMAL';
 
