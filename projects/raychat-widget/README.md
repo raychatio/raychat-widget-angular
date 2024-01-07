@@ -20,19 +20,19 @@ npm i @raychat/widget-angular
 
 ## Use
 
-**1. Import in the AppComponent**
+**1. Import 'RaychatWidget' in the AppComponent**
 _Wrote to app.component.ts:_
 
 ```js
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterOutlet } from "@angular/router";
-import { RaychatWidgetComponent } from "raychat-widget";
+import { RaychatWidget } from "raychat-widget-angular";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RaychatWidgetComponent],
+  imports: [CommonModule, RouterOutlet, RaychatWidget],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
 })
@@ -43,7 +43,7 @@ export class AppComponent {
 
 <br>
 
-**2. Use in the app.component.html**
+**2. Use the component in the app.component.html**
 
 > Get `token` and `type` from [raychat.io][raychat-landing]
 
@@ -54,16 +54,16 @@ export class AppComponent {
 
 <main>
   <!-- other elements -->
-  <lib-raychat-widget token="6d5b4ba5-xxxx-xxxx-xxxx-48498f3fc2a2" type="normal" />
+  <raychat-widget token="6d5b4ba5-xxxx-xxxx-xxxx-48498f3fc2a2" type="SEO_FRIENDLY" />
 </main>
 ```
 
 ## Props
 
-| props | required | defaultValue | description                                           |
-| ----- | -------- | ------------ | ----------------------------------------------------- |
-| token | true     | undefined    | Get `token` from [raychat.io][raychat-get-token]      |
-| type  | false    | normal       | The type of script: [normal, fast-laod, seo-friendly] |
+| Props | Required | DefaultValue | Description                                            |
+| ----- | -------- | ------------ | ------------------------------------------------------ |
+| token | true     | undefined    | Get `token` from [raychat.io][raychat-get-token]       |
+| type  | false    | NORMAL       | Widget load types: [ NORMAL, SEO_FRIENDLY, FAST_LOAD ] |
 
 ### License
 
