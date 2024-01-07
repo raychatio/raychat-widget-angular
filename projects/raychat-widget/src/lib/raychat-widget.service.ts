@@ -6,27 +6,32 @@ import { Injectable } from '@angular/core';
 export class RaychatWidgetService {
   constructor() {}
 
-  install(token: string, type: string = 'normal') {
-    if (!token) {
-      console.error('Token for raychat is not provided.');
+  install(token: string, type: string = 'NORMAL') {
+    const validTypes = ['NORMAL', 'SEO_FRIENDLY', 'FAST_LOAD'];
+    if (!token || token.length === 0) {
+      console.error('Token for raychat widget is not provided.');
       return;
     }
-    if (type && type !== 'normal') {
-      console.warn('Invalid type for raychat. using type normal instead');
-      type = 'normal';
+    if (!validTypes.includes(type.toUpperCase())) {
+      console.warn('Invalid type for raychat. using type NORMAL instead');
+      type = 'NORMAL';
     }
 
     // Set the token as a global variable on the window object
     (window as any).RAYCHAT_TOKEN = token;
 
-    if (type === 'normal') {
-      const script: HTMLScriptElement = document.createElement('script');
-      script.src = 'https://widget-react.raychat.io/install/widget.js';
-      script.type = 'text/javascript';
-      script.async = true;
-      // this.scriptElement.defer = true;
+    // Set the loding type for widget
+    if (type.toUpperCase() === 'SEO_FRIENDLY')
+      (window as any).SEO_FRIENDLY = true;
+    else if (type.toUpperCase() === 'FAST_LOAD')
+      (window as any).FAST_LOAD = true;
 
-      document.head.appendChild(script);
-    }
+    // Set the script to the head
+    const script: HTMLScriptElement = document.createElement('script');
+    script.src = 'https://widget-react.raychat.io/install/widget.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    // this.scriptElement.defer = true;
+    document.head.appendChild(script);
   }
 }

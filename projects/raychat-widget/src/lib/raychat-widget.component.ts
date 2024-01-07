@@ -10,7 +10,7 @@ import { RaychatWidgetService } from './raychat-widget.service';
 })
 export class RaychatWidgetComponent implements AfterViewInit {
   @Input() token: string;
-  @Input() type: string = 'normal';
+  @Input() type: string = 'NORMAL';
 
   constructor(private raychatService: RaychatWidgetService) {
     this.token = '';
@@ -40,12 +40,14 @@ export class RaychatWidgetComponent implements AfterViewInit {
   }
 
   private validateType(type: string): string {
-    if (!type) return 'normal';
-    if (type !== 'normal') {
+    const validTypes = ['NORMAL', 'SEO_FRIENDLY', 'FAST_LOAD'];
+
+    if (!type) return 'NORMAL:';
+    if (!validTypes.includes(type.toUpperCase())) {
       console.warn(
-        `Passed type for raychat widget (${type}) is not valid. using type normal instead.`
+        `Passed type for raychat widget: (${type}) is not valid. using type 'NORMAL' instead.`
       );
-      return 'normal';
+      return 'NORMAL';
     }
 
     return type;
