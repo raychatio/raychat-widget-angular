@@ -22,9 +22,9 @@ export class RaychatWidgetService {
 
     // Set the loding type for widget
     if (type.toUpperCase() === 'SEO_FRIENDLY')
-      (window as any).SEO_FRIENDLY = true;
+      (window as any).LOAD_TYPE = "SEO_FRIENDLY";
     else if (type.toUpperCase() === 'FAST_LOAD')
-      (window as any).FAST_LOAD = true;
+      (window as any).LOAD_TYPE = "FAST_LOAD";
 
     // Set the script to the head
     const script: HTMLScriptElement = document.createElement('script');
